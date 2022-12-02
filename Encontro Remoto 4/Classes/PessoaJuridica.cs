@@ -37,8 +37,6 @@ namespace CadastroPessoaFS12.Classes
                         return true;
                     }
                 }
-
-
             }
 
             return false;
