@@ -26,10 +26,25 @@ namespace CadastroPessoaFS12.Classes
 
 
 
-
+        // Pessoa física
+        // Para rendimentos até R$1.500,00 - isento (desconto 0)
+        // Para rendimentos entre R$1.500,01 e R$5.000,00 - desconto de 3%
+        // Para rendimentos acima de R$5.000,01 - desconto de 5%
         public override float PagarImposto(float rendimento)
         {
-            throw new NotImplementedException();
+
+            if ( rendimento <= 1500 )
+            {//isento
+                return rendimento;
+            }
+            else if (rendimento <= 5000)
+            {// 3% de desconto 1500.01
+                return rendimento - ((rendimento / 100) * 3);
+            }
+            else
+            {// 5% - 5001 pra cima
+                return rendimento - rendimento / 100 * 5;
+            }
         }
 
 

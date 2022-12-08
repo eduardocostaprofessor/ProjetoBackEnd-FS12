@@ -20,7 +20,7 @@ PessoaFisica pf1 = new PessoaFisica();
 pf1.Nome = "Eduardo Costa";
 pf1.DataNascimento = new DateTime(2005, 7, 20);
 pf1.Cpf = "30430430404";
-pf1.Rendimento = 1000;
+pf1.Rendimento = 5000.99f;
 pf1.Endereco = endPf1;
 
 // EXIBIÇÃO
@@ -28,7 +28,7 @@ Console.WriteLine($"PESSOA FÍSICA 1");
 Console.WriteLine($"Nome: {pf1.Nome}");
 Console.WriteLine($"CPF: {pf1.Cpf}");
 Console.WriteLine($"Rendimento: {pf1.Rendimento}");
-Console.WriteLine($"Rendimento Líquido: {pf1.Rendimento}");
+Console.WriteLine($"Rendimento Líquido: {metodosPf.PagarImposto(pf1.Rendimento)}");
 Console.WriteLine($"Data Nascimento: {pf1.DataNascimento}");
 Console.WriteLine($"Maior de Idade? {metodosPf.ValidarDataNascimento(pf1.DataNascimento)}");//datetime
 Console.WriteLine($"Rua: {pf1.Endereco.Logradouro}");
@@ -46,7 +46,7 @@ endPj.Comercial = true;
 PessoaJuridica novaPj = new PessoaJuridica();
 novaPj.Nome = "Paulo";
 novaPj.Endereco = endPj;
-novaPj.Rendimento = 100000 ;
+novaPj.Rendimento = 10000.01f ;
 novaPj.Cnpj = "62.236.353/0002-42";
 // novaPj.Cnpj = "62236353000142";
 novaPj.Fantasia = "SENAI";
@@ -60,17 +60,10 @@ Representante: {novaPj.Nome}
 CNPJ: {novaPj.Cnpj}
 CNPJ Válido: {metodosPj.ValidarCnpj(novaPj.Cnpj)}
 Rendimento Anual: {novaPj.Rendimento}
-Rendimento Líquido: {novaPj.Rendimento}
+Rendimento Líquido: {metodosPj.PagarImposto(novaPj.Rendimento)}
 Endereço: {novaPj.Endereco.Logradouro}, {novaPj.Endereco.Numero}
 Endereço Comercial: {novaPj.Endereco.Comercial}
 ");
-
-
-
-
-
-
-
 
 
 
